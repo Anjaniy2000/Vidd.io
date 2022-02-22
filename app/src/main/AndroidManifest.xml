@@ -11,13 +11,16 @@
         android:theme="@style/Theme.Viddio">
         <activity
             android:name=".SignupActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Create New Account"/>
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Login"/>
         <activity
             android:name=".SplashScreen"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Viddio.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
