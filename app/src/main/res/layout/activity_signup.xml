@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".SignupActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -30,6 +30,19 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 app:srcCompat="@drawable/login" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/textbox"
+                android:drawableStart="@drawable/profileicon"
+                android:drawablePadding="16dp"
+                android:ems="10"
+                android:hint="@string/name"
+                android:inputType="textPersonName"
+                android:padding="8dp" />
 
             <EditText
                 android:id="@+id/email"
@@ -65,7 +78,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/button_style"
-                android:text="@string/loginButton"
+                android:text="@string/signupButton"
                 android:textColor="@color/black">
             </Button>
 
@@ -78,8 +91,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/button_style_2"
-                android:text="@string/createAccountButton"
+                android:text="@string/alreadyAccountButton"
                 android:textColor="@color/black" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

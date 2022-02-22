@@ -4,4 +4,7 @@
     <string name="createAccountButton">Create An Account</string>
     <string name="emailHint">Email Address</string>
     <string name="passwordHint">Password</string>
+    <string name="signupButton">Create An Account</string>
+    <string name="alreadyAccountButton">Already Have An Account ?</string>
+    <string name="name">Full Name</string>
 </resources>
