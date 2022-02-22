@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Vidd.io</string>
+    <string name="loginButton">Login</string>
+    <string name="createAccountButton">Create An Account</string>
+    <string name="emailHint">Email Address</string>
+    <string name="passwordHint">Password</string>
 </resources>
