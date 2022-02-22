@@ -70,7 +70,7 @@
                 android:padding="8dp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/signupButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -82,7 +82,7 @@
             </Button>
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/backToLoginButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
