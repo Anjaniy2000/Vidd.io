@@ -34,7 +34,7 @@
                 app:srcCompat="@drawable/logo" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -47,7 +47,7 @@
                 android:padding="8dp" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/emailForSignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -60,7 +60,7 @@
                 android:padding="8dp" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/passwordForSignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

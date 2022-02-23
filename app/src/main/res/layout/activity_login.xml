@@ -34,7 +34,7 @@
                 app:srcCompat="@drawable/logo" />
 
             <EditText
-                android:id="@+id/email"
+                android:id="@+id/emailForLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
@@ -44,10 +44,11 @@
                 android:ems="10"
                 android:hint="@string/emailHint"
                 android:inputType="textEmailAddress"
+                android:minHeight="48dp"
                 android:padding="8dp" />
 
             <EditText
-                android:id="@+id/password"
+                android:id="@+id/passwordForLogin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
