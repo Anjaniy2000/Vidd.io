@@ -13,4 +13,5 @@
     <string name="joinButton">Join</string>
     <string name="meeting_code">Meeting Code</string>
     <string name="meeting_code_info">Please share this meeting code with your friends to start the video call.</string>
+    <string name="aboutOption">About</string>
 </resources>
