@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "740870854412",
+    "project_id": "viddio-f3440",
+    "storage_bucket": "viddio-f3440.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740870854412:android:a1b183afffe8752b469b29",
+        "android_client_info": {
+          "package_name": "com.example.viddio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740870854412-t7tmd05k33ug8e6hq6749jpai1snavf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuPdgZX-0AIwGN34Lwmxr0fWyecKfy-jc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740870854412-t7tmd05k33ug8e6hq6749jpai1snavf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
