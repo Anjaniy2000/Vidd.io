@@ -7,4 +7,10 @@
     <string name="signupButton">Create An Account</string>
     <string name="alreadyAccountButton">Already Have An Account ?</string>
     <string name="name">Full Name</string>
+    <string name="homeOption">Home</string>
+    <string name="logoutOption">Logout</string>
+    <string name="shareCodeButton">Share</string>
+    <string name="joinButton">Join</string>
+    <string name="meeting_code">Meeting Code</string>
+    <string name="meeting_code_info">Please share this meeting code with your friends to start the video call.</string>
 </resources>
