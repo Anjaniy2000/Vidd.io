@@ -52,7 +52,7 @@
                 android:text="@string/meeting_code_info" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName"
+                android:id="@+id/meetingCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
