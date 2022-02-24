@@ -5,9 +5,9 @@
         android:icon="@drawable/home"
         android:title="@string/homeOption" />
     <item
-        android:icon="@drawable/logout"
-        android:title="@string/logoutOption" />
+        android:icon="@drawable/profile"
+        android:title="@string/profile" />
     <item
-        android:icon="@drawable/info"
+        android:icon="@drawable/about"
         android:title="@string/aboutOption" />
 </menu>

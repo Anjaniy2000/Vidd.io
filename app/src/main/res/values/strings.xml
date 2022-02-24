@@ -8,7 +8,7 @@
     <string name="alreadyAccountButton">Already Have An Account ?</string>
     <string name="name">Full Name</string>
     <string name="homeOption">Home</string>
-    <string name="logoutOption">Logout</string>
+    <string name="profile">Profile</string>
     <string name="shareCodeButton">Share</string>
     <string name="joinButton">Join</string>
     <string name="meeting_code">Meeting Code</string>

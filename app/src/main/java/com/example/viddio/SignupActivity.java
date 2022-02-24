@@ -66,7 +66,7 @@ public class SignupActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            database.collection("User").document().set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            database.collection("Users").document().set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(SignupActivity.this, "Account is created!", Toast.LENGTH_LONG).show();

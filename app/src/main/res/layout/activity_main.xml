@@ -77,10 +77,11 @@
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/button_style"
-                    android:text="@string/joinButton"
                     android:drawableLeft="@drawable/join"
+                    android:minWidth="48dp"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
+                    android:text="@string/joinButton"
                     android:textColor="@color/white" />
 
                 <Button
