@@ -33,24 +33,22 @@ public class LoginActivity extends AppCompatActivity {
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String emailAddress, password;
-                emailAddress = binding.emailForLogin.getText().toString();
-                password = binding.passwordForLogin.getText().toString();
 
-                if(emailAddress.isEmpty()){
+                //Validations:
+                if(binding.emailForLogin.getText().toString().trim().isEmpty()){
                     binding.emailForLogin.setError("Enter your email address");
                     binding.emailForLogin.requestFocus();
                     return;
                 }
 
-                if(password.isEmpty()){
+                if(binding.passwordForLogin.getText().toString().trim().isEmpty()){
                     binding.passwordForLogin.setError("Enter your password");
                     binding.passwordForLogin.requestFocus();
                     return;
                 }
 
 
-                auth.signInWithEmailAndPassword(emailAddress, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                auth.signInWithEmailAndPassword(binding.emailForLogin.getText().toString().trim(), binding.passwordForLogin.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){

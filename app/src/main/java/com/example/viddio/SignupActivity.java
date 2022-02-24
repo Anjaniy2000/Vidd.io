@@ -38,16 +38,31 @@ public class SignupActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String fullName, emailAddress, password;
-                fullName = binding.fullName.getText().toString();
-                emailAddress = binding.emailForSignup.getText().toString();
-                password = binding.passwordForSignup.getText().toString();
+
+                if(binding.fullName.getText().toString().trim().isEmpty()){
+                    binding.fullName.setError("Enter your full name");
+                    binding.fullName.requestFocus();
+                    return;
+                }
+
+                if(binding.emailForSignup.getText().toString().trim().isEmpty()){
+                    binding.emailForSignup.setError("Enter your email address");
+                    binding.emailForSignup.requestFocus();
+                    return;
+                }
+
+                if(binding.passwordForSignup.getText().toString().trim().isEmpty()){
+                    binding.passwordForSignup.setError("Enter your password");
+                    binding.passwordForSignup.requestFocus();
+                    return;
+                }
 
                 user = new User();
-                user.setFullName(fullName);
-                user.setEmailAddress(emailAddress);
-                user.setPassword(password);
+                user.setFullName(binding.fullName.getText().toString().trim());
+                user.setEmailAddress(binding.emailForSignup.getText().toString().trim());
+                user.setPassword(binding.passwordForSignup.getText().toString().trim());
 
-                auth.createUserWithEmailAndPassword(emailAddress, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                auth.createUserWithEmailAndPassword(binding.emailForSignup.toString().trim(), binding.passwordForSignup.toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
