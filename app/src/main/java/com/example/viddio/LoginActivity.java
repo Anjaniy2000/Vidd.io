@@ -35,20 +35,20 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 //Validations:
-                if(binding.emailForLogin.getText().toString().trim().isEmpty()){
+                if(binding.emailForLogin.getText().toString().isEmpty()){
                     binding.emailForLogin.setError("Enter your email address");
                     binding.emailForLogin.requestFocus();
                     return;
                 }
 
-                if(binding.passwordForLogin.getText().toString().trim().isEmpty()){
+                if(binding.passwordForLogin.getText().toString().isEmpty()){
                     binding.passwordForLogin.setError("Enter your password");
                     binding.passwordForLogin.requestFocus();
                     return;
                 }
 
 
-                auth.signInWithEmailAndPassword(binding.emailForLogin.getText().toString().trim(), binding.passwordForLogin.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                auth.signInWithEmailAndPassword(binding.emailForLogin.getText().toString(), binding.passwordForLogin.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){

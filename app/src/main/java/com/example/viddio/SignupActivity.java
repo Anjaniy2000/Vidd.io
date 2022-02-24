@@ -37,32 +37,32 @@ public class SignupActivity extends AppCompatActivity {
         binding.signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String fullName, emailAddress, password;
 
-                if(binding.fullName.getText().toString().trim().isEmpty()){
+                //Validations:
+                if(binding.fullName.getText().toString().isEmpty()){
                     binding.fullName.setError("Enter your full name");
                     binding.fullName.requestFocus();
                     return;
                 }
 
-                if(binding.emailForSignup.getText().toString().trim().isEmpty()){
+                if(binding.emailForSignup.getText().toString().isEmpty()){
                     binding.emailForSignup.setError("Enter your email address");
                     binding.emailForSignup.requestFocus();
                     return;
                 }
 
-                if(binding.passwordForSignup.getText().toString().trim().isEmpty()){
+                if(binding.passwordForSignup.getText().toString().isEmpty()){
                     binding.passwordForSignup.setError("Enter your password");
                     binding.passwordForSignup.requestFocus();
                     return;
                 }
 
                 user = new User();
-                user.setFullName(binding.fullName.getText().toString().trim());
-                user.setEmailAddress(binding.emailForSignup.getText().toString().trim());
-                user.setPassword(binding.passwordForSignup.getText().toString().trim());
+                user.setFullName(binding.fullName.getText().toString());
+                user.setEmailAddress(binding.emailForSignup.getText().toString());
+                user.setPassword(binding.passwordForSignup.getText().toString());
 
-                auth.createUserWithEmailAndPassword(binding.emailForSignup.toString().trim(), binding.passwordForSignup.toString().trim()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                auth.createUserWithEmailAndPassword(binding.emailForSignup.getText().toString(), binding.passwordForSignup.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
