@@ -13,9 +13,12 @@ import com.example.viddio.R;
 
 public class AboutFragment extends Fragment {
 
+    private View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.about_fragment, container, false);
+        view = inflater.inflate(R.layout.about_fragment, container, false);
+        return view;
     }
 }

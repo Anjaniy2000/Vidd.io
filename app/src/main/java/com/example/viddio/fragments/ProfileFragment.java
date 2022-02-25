@@ -12,9 +12,13 @@ import androidx.fragment.app.Fragment;
 import com.example.viddio.R;
 
 public class ProfileFragment extends Fragment {
+
+    private View view;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.profile_fragment, container, false);
+        view = inflater.inflate(R.layout.profile_fragment, container, false);
+        return view;
     }
 }

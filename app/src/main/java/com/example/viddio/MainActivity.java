@@ -25,7 +25,6 @@ import java.net.URL;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
-//    private URL serverURL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,41 +33,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         binding.bottomNavigationView.setOnNavigationItemSelectedListener(listener);
         getSupportFragmentManager().beginTransaction().replace(R.id.frame_container, new HomeFragment()).commit();
-
-
-
-//        try {
-//            serverURL = new URL("https://meet.jit.si");
-//            JitsiMeetConferenceOptions defaultOptions =
-//                    new JitsiMeetConferenceOptions.Builder()
-//                            .setServerURL(serverURL)
-//                            .setWelcomePageEnabled(false)
-//                            .build();
-//            JitsiMeet.setDefaultConferenceOptions(defaultOptions);
-//        } catch (MalformedURLException e) {
-//            e.printStackTrace();
-//        }
-//
-//
-//        binding.joinButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
-//                        .setRoom(binding.meetingCode.getText().toString())
-//                        .setWelcomePageEnabled(false)
-//                        .build();
-//
-//                JitsiMeetActivity.launch(MainActivity.this, options);
-//
-//            }
-//        });
-//
-//        binding.shareButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener listener = new BottomNavigationView.OnNavigationItemSelectedListener() {
