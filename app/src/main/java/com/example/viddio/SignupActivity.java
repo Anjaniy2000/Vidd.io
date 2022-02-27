@@ -71,6 +71,7 @@ public class SignupActivity extends AppCompatActivity {
                                 public void onSuccess(Void unused) {
                                     Toast.makeText(SignupActivity.this, "Account is created!", Toast.LENGTH_LONG).show();
                                     startActivity(new Intent(SignupActivity.this, LoginActivity.class));
+                                    finishAffinity();
                                 }
                             });
                         }
