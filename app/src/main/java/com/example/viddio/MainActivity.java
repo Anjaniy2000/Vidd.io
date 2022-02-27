@@ -1,10 +1,12 @@
 package com.example.viddio;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,4 +64,39 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     };
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder;
+        builder = new AlertDialog.Builder(this,R.style.AlertDialogStyle);
+
+        builder.setMessage("Do You Want To Close This App?")
+
+                .setCancelable(false)
+
+                //CODE FOR POSITIVE(YES) BUTTON: -
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //ACTION FOR "YES" BUTTON: -
+                        finish();
+                    }
+                })
+
+                //CODE FOR NEGATIVE(NO) BUTTON: -
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //ACTION FOR "NO" BUTTON: -
+                        dialog.cancel();
+                    }
+                });
+
+        //CREATING A DIALOG-BOX: -
+        AlertDialog alertDialog = builder.create();
+        //SET TITLE MAUALLY: -
+        alertDialog.setTitle("Exit");
+        alertDialog.show();
+    }
 }
