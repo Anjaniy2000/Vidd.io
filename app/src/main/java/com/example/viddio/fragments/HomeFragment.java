@@ -10,7 +10,12 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.viddio.LoginActivity;
+import com.example.viddio.MainActivity;
 import com.example.viddio.R;
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.jitsi.meet.sdk.JitsiMeet;
 import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
@@ -62,6 +67,9 @@ public class HomeFragment extends Fragment {
 //                sharingIntent.setType("text/plain");
 //                sharingIntent.putExtra(Intent.EXTRA_TEXT, meetingCode.getText().toString());
 //                startActivity(Intent.createChooser(sharingIntent, "Share This Meeting Code Using:"));
+
+//                FirebaseAuth.getInstance().signOut();
+//                startActivity(new Intent(getActivity(), LoginActivity.class));
 
             }
         });

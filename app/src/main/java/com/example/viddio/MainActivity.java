@@ -3,6 +3,7 @@ package com.example.viddio;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
@@ -46,14 +47,17 @@ public class MainActivity extends AppCompatActivity {
             switch(item.getItemId()){
 
                 case R.id.home:
+                    binding.mainToolbar.setTitle(R.string.homeOption);
                     selectedFragment = new HomeFragment();
                     break;
 
                 case R.id.profile:
+                    binding.mainToolbar.setTitle(R.string.profile);
                     selectedFragment = new ProfileFragment();
                     break;
 
                 case R.id.about:
+                    binding.mainToolbar.setTitle(R.string.about_app);
                     selectedFragment = new AboutFragment();
                     break;
 

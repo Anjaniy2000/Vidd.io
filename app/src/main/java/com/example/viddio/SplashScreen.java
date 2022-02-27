@@ -29,7 +29,14 @@ public class SplashScreen extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                startActivity(new Intent(SplashScreen.this, LoginActivity.class));
+                FirebaseAuth auth = FirebaseAuth.getInstance();
+                if(auth.getCurrentUser() != null){
+                    startActivity(new Intent(SplashScreen.this, MainActivity.class));
+                }
+                else{
+                    startActivity(new Intent(SplashScreen.this, LoginActivity.class));
+                }
+
             }
         },2000);
 
