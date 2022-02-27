@@ -18,8 +18,8 @@
     <string name="sign_out">Sign Out</string>
     <string name="signout_description">sign off is disconnecting from a network or account voluntarily</string>
     <string name="forgot_password">Forgot Password</string>
-    <string name="forgot_password_description">allows users who have forgotten their password to unlock, retrieve, or reset it</string>
-    <string name="delete_account_description">This removes the Account from the database entirely</string>
+    <string name="forgot_password_description">Allows users who have forgotten their password to unlock, retrieve, or reset it.</string>
+    <string name="delete_account_description">This will removes your account from the database entirely.</string>
     <string name="delete_account">Delete Account</string>
     <string name="update_account">Update Account</string>
     <string name="update_account_description">The act or an instance of bringing something or someone up to date.</string>
