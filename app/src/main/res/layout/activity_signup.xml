@@ -8,12 +8,13 @@
     tools:context=".SignupActivity">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        app:cardElevation="4dp"
         app:cardCornerRadius="36dp"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +45,7 @@
                 android:ems="10"
                 android:hint="@string/name"
                 android:inputType="textPersonName"
+                android:minHeight="48dp"
                 android:padding="8dp" />
 
             <EditText
@@ -57,6 +59,7 @@
                 android:ems="10"
                 android:hint="@string/emailHint"
                 android:inputType="textEmailAddress"
+                android:minHeight="48dp"
                 android:padding="8dp" />
 
             <EditText
@@ -70,6 +73,7 @@
                 android:ems="10"
                 android:hint="@string/passwordHint"
                 android:inputType="textPassword"
+                android:minHeight="48dp"
                 android:padding="8dp" />
 
             <Button
