@@ -31,7 +31,7 @@ public class AboutFragment extends Fragment {
                 .addItem(versionElement)
                 .addEmail("anjaniy01salekar@gmail.com")
                 .addPlayStore("com.ideashower.readitlater.pro")
-                .addGitHub("Anjaniy2000/MemesHub")
+                .addGitHub("Anjaniy2000/Vidd.io")
                 .create();
     }
 }
