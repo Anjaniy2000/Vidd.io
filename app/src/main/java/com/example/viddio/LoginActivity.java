@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                 //CODE FOR POSITIVE(YES) BUTTON: -
                 .setPositiveButton("Yes", (dialog, which) -> {
                     //ACTION FOR "YES" BUTTON: -
-                    finish();
+                    finishAffinity();
                 })
 
                 //CODE FOR NEGATIVE(NO) BUTTON: -
