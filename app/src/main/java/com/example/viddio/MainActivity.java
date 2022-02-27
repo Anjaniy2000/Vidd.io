@@ -24,7 +24,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

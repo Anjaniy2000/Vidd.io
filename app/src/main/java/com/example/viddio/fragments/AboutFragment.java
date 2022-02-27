@@ -11,14 +11,27 @@ import androidx.fragment.app.Fragment;
 
 import com.example.viddio.R;
 
-public class AboutFragment extends Fragment {
+import mehdi.sakout.aboutpage.AboutPage;
+import mehdi.sakout.aboutpage.Element;
 
-    private View view;
+public class AboutFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.about_fragment, container, false);
-        return view;
+        View view = inflater.inflate(R.layout.about_fragment, container, false);
+
+        Element versionElement = new Element();
+        versionElement.setTitle("Version 1.0");
+
+        return new AboutPage(getActivity())
+                .isRTL(false)
+                .setImage(R.drawable.logo)
+                .setDescription(getString(R.string.about_app))
+                .addItem(versionElement)
+                .addEmail("anjaniy01salekar@gmail.com")
+                .addPlayStore("com.ideashower.readitlater.pro")
+                .addGitHub("Anjaniy2000/MemesHub")
+                .create();
     }
 }

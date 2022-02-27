@@ -46,4 +46,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
     implementation ('org.jitsi.react:jitsi-meet-sdk:3.+') { transitive = true }
+    implementation 'io.github.medyo:android-about-page:2.0.0'
 }
