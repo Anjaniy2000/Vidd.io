@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,12 +37,17 @@ public class ProfileFragment extends Fragment {
     private CardView signoutCard;
     private CardView deleteCard;
     private CardView forgotPasswordCard;
+    private TextView name;
+    private TextView email;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.profile_fragment, container, false);
         widgetSetup();
+
+        name.setText("Anjaniy Salekar");
+        email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
 
         forgotPasswordCard.setOnClickListener(v -> {
 
@@ -165,8 +171,10 @@ public class ProfileFragment extends Fragment {
     }
 
     private void widgetSetup() {
-        forgotPasswordCard = (CardView) view.findViewById(R.id.forgot_password_card);
-        signoutCard = (CardView) view.findViewById(R.id.sign_out_card);
-        deleteCard = (CardView) view.findViewById(R.id.delete_account_card);
+        name = view.findViewById(R.id.name);
+        email = view.findViewById(R.id.email);
+        forgotPasswordCard = view.findViewById(R.id.forgot_password_card);
+        signoutCard = view.findViewById(R.id.sign_out_card);
+        deleteCard = view.findViewById(R.id.delete_account_card);
     }
 }

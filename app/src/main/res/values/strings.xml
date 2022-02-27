@@ -23,4 +23,6 @@
     <string name="delete_account">Delete Account</string>
     <string name="update_account">Update Account</string>
     <string name="update_account_description">The act or an instance of bringing something or someone up to date.</string>
+    <string name="temp_name">Anjaniy Salekar</string>
+    <string name="temp_email">anjaniy01salekar@gmail.com</string>
 </resources>
