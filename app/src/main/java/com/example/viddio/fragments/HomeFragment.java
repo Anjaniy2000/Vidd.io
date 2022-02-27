@@ -46,39 +46,45 @@ public class HomeFragment extends Fragment {
         }
         widgetSetup();
 
-        join.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        join.setOnClickListener(v -> {
 
+            if(meetingCode.getText().toString().isEmpty()){
+                meetingCode.setError("Please enter meeting code !");
+                meetingCode.requestFocus();
+            }
+            else{
                 JitsiMeetConferenceOptions options = new JitsiMeetConferenceOptions.Builder()
                         .setRoom(meetingCode.getText().toString())
                         .setWelcomePageEnabled(false)
                         .build();
 
                 JitsiMeetActivity.launch(requireActivity().getApplicationContext(), options);
-
             }
         });
 
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-//                sharingIntent.setType("text/plain");
-//                sharingIntent.putExtra(Intent.EXTRA_TEXT, meetingCode.getText().toString());
-//                startActivity(Intent.createChooser(sharingIntent, "Share This Meeting Code Using:"));
+        share.setOnClickListener(v -> {
 
-//                FirebaseAuth.getInstance().signOut();
-//                startActivity(new Intent(getActivity(), LoginActivity.class));
-
+            if(meetingCode.getText().toString().isEmpty()){
+                meetingCode.setError("There is no meeting code !");
+                meetingCode.requestFocus();
             }
+            else{
+                String subject = "Use this meeting code to join!";
+                Intent txtIntent = new Intent(Intent.ACTION_SEND);
+                txtIntent .setType("text/plain");
+                txtIntent .putExtra(Intent.EXTRA_SUBJECT, subject);
+                txtIntent .putExtra(Intent.EXTRA_TEXT, meetingCode.getText().toString());
+                startActivity(Intent.createChooser(txtIntent ,"Share this meeting code using:"));
+            }
+
+
         });
         return view;
     }
 
     private void widgetSetup() {
-        join = (Button)view.findViewById(R.id.joinButton);
-        share = (Button)view.findViewById(R.id.shareButton);
-        meetingCode = (EditText)view.findViewById(R.id.meetingCode);
+        join = view.findViewById(R.id.joinButton);
+        share = view.findViewById(R.id.shareButton);
+        meetingCode = view.findViewById(R.id.meetingCode);
     }
 }
