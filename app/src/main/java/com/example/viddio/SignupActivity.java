@@ -66,7 +66,7 @@ public class SignupActivity extends AppCompatActivity {
 
             auth.createUserWithEmailAndPassword(binding.emailForSignup.getText().toString(), binding.passwordForSignup.getText().toString()).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
-                    database.collection("Users").document().set(user).addOnSuccessListener(unused -> {
+                    database.collection("Users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).set(user).addOnSuccessListener(unused -> {
                         Toast.makeText(SignupActivity.this, "Account is created!", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(SignupActivity.this, LoginActivity.class));
                         finishAffinity();

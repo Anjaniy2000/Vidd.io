@@ -23,8 +23,12 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.WriteBatch;
 
@@ -37,6 +41,7 @@ public class ProfileFragment extends Fragment {
     private CardView signoutCard;
     private CardView deleteCard;
     private CardView forgotPasswordCard;
+    private String getName;
     private TextView name;
     private TextView email;
 
@@ -45,9 +50,6 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.profile_fragment, container, false);
         widgetSetup();
-
-        name.setText("Anjaniy Salekar");
-        email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
 
         forgotPasswordCard.setOnClickListener(v -> {
 
@@ -121,37 +123,24 @@ public class ProfileFragment extends Fragment {
                     .setPositiveButton("Yes", (dialog, which) -> {
                         //ACTION FOR "YES" BUTTON: -
                         FirebaseFirestore.getInstance().collection("Users")
-                                .whereEqualTo("emailAddress", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail()).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-                            @Override
-                            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                                WriteBatch writeBatch = FirebaseFirestore.getInstance().batch();
-                                List<DocumentSnapshot> snapshots = queryDocumentSnapshots.getDocuments();
+                                .whereEqualTo("emailAddress", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail()).get().addOnSuccessListener(queryDocumentSnapshots -> {
+                                    WriteBatch writeBatch = FirebaseFirestore.getInstance().batch();
+                                    List<DocumentSnapshot> snapshots = queryDocumentSnapshots.getDocuments();
 
-                                for(DocumentSnapshot snapshot: snapshots){
-                                        writeBatch.delete(snapshot.getReference());
-                                }
+                                    for(DocumentSnapshot snapshot: snapshots){
+                                            writeBatch.delete(snapshot.getReference());
+                                    }
 
-                                writeBatch.commit().addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).delete().addOnCompleteListener(task -> {
-                                            if(task.isSuccessful()){
-                                                Toast.makeText(getActivity(), "Account deleted successfully", Toast.LENGTH_LONG).show();
-                                                startActivity(new Intent(getActivity(), SplashScreen.class));
-                                            }
-                                            else{
-                                                Toast.makeText(getActivity(), Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                                            }
-                                        });
-                                    }
-                                }).addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-                                    }
+                                    writeBatch.commit().addOnSuccessListener(unused -> Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).delete().addOnCompleteListener(task -> {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(getActivity(), "Account deleted successfully", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(getActivity(), SplashScreen.class));
+                                        }
+                                        else{
+                                            Toast.makeText(getActivity(), Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                                        }
+                                    })).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
                                 });
-                            }
-                        });
                     })
 
                     //CODE FOR NEGATIVE(NO) BUTTON: -
