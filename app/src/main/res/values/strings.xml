@@ -14,7 +14,7 @@
     <string name="meeting_code">Meeting Code</string>
     <string name="meeting_code_info">Please share this meeting code with your friends to start the video call.</string>
     <string name="aboutOption">About</string>
-    <string name="about_app">Vidd.io is a free multi-feature web conferencing platform that is used for audio and/or video conferencing</string>
+    <string name="about_app">Vidd.io is a multi-feature web conferencing platform which is used for audio and/or video conferencing.</string>
     <string name="sign_out">Sign Out</string>
     <string name="signout_description">This will allow users who wants to sign out from this application.</string>
     <string name="forgot_password">Forgot / Reset Password</string>
