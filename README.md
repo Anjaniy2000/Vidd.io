@@ -25,3 +25,7 @@
 
 ![Screenshot](/screenshots/9.png)
 ![Screenshot](/screenshots/11.png)
+
+<h3>Share Meeting Code: </h3>
+
+![Screenshot](/screenshots/10.png)
