@@ -29,3 +29,14 @@
 <h3>Share Meeting Code: </h3>
 
 ![Screenshot](/screenshots/10.png)
+
+<h3>Video Call / Conference Meeting: </h3>
+
+![Screenshot](/screenshots/12.png)
+![Screenshot](/screenshots/13.png)
+![Screenshot](/screenshots/14.png)
+![Screenshot](/screenshots/15.png)
+
+<h3>About App: </h3>
+
+![Screenshot](/screenshots/16.png)
