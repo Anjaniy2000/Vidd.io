@@ -16,6 +16,6 @@
 ![Screenshot](/screenshots/5.png)
 
 <h3>Main Activity: </h3>
-
+<h4>Home Fragment:
 ![Screenshot](/screenshots/6.png)
 
