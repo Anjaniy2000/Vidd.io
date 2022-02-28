@@ -15,7 +15,7 @@
 ![Screenshot](/screenshots/2.png)
 ![Screenshot](/screenshots/5.png)
 
-<h3>Main Activity With Bottom Navigation View: </h3>
+<h3>Main Activity(With Bottom Navigation View): </h3>
 
 ![Screenshot](/screenshots/6.png)
 ![Screenshot](/screenshots/7.png)
