@@ -61,6 +61,13 @@ public class ProfileFragment extends Fragment {
 
         //Displaying Name & Email:
         email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
+        DocumentReference reference2 = FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        reference2.get().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                DocumentSnapshot snapshot = task.getResult();
+                name.setText(snapshot.getString("fullName"));
+            }
+        });
 
         //Update Username:
         updateUsername.setOnClickListener(v -> {
