@@ -130,10 +130,12 @@ public class ProfileFragment extends Fragment {
 
                     //CODE FOR POSITIVE(YES) BUTTON: -
                     .setPositiveButton("Yes", (dialog, which) -> {
+                        showProgressDialog();
                         //ACTION FOR "YES" BUTTON: -
                         FirebaseAuth.getInstance().signOut();
                         Toast.makeText(getActivity(), "Sign out successfully", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getActivity(), LoginActivity.class));
+                        dismissDialog();
                     })
 
                     //CODE FOR NEGATIVE(NO) BUTTON: -
@@ -162,6 +164,7 @@ public class ProfileFragment extends Fragment {
 
                     //CODE FOR POSITIVE(YES) BUTTON: -
                     .setPositiveButton("Yes", (dialog, which) -> {
+                        showProgressDialog();
                         //ACTION FOR "YES" BUTTON: -
                         FirebaseFirestore.getInstance().collection("Users")
                                 .whereEqualTo("emailAddress", Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail()).get().addOnSuccessListener(queryDocumentSnapshots -> {
@@ -176,9 +179,11 @@ public class ProfileFragment extends Fragment {
                                         if(task.isSuccessful()){
                                             Toast.makeText(getActivity(), "Account deleted successfully", Toast.LENGTH_LONG).show();
                                             startActivity(new Intent(getActivity(), SplashScreen.class));
+                                            dismissDialog();
                                         }
                                         else{
                                             Toast.makeText(getActivity(), Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                                            dismissDialog();
                                         }
                                     })).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
                                 });
