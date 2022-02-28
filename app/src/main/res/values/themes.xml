@@ -32,4 +32,8 @@
         <item name="android:textColor">@color/primary_first</item>
         <item name="android:textColorPrimary">@color/black</item>
     </style>
+
+    <style name="AppTheme.WhiteAccent">
+        <item name="colorAccent">@color/white</item> <!-- Whatever color you want-->
+    </style>
 </resources>

@@ -3,6 +3,7 @@ package com.example.viddio;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -16,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     ActivityLoginBinding binding;
     private FirebaseAuth auth;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,8 @@ public class LoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         binding.loginButton.setOnClickListener(v -> {
+
+            showProgressDialog();
 
             //Validations:
             if(binding.emailForLogin.getText().toString().isEmpty()){
@@ -45,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Login successfully!", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    dismissDialog();
                     finishAffinity();
                 }
                 else{
@@ -54,6 +59,17 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.createAccountButton.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, SignupActivity.class)));
+    }
+
+    private void showProgressDialog() {
+        dialog = new ProgressDialog(LoginActivity.this);
+        dialog.show();
+        dialog.setContentView(R.layout.progress_dialog);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+    }
+    public void dismissDialog() {
+        dialog.dismiss();
     }
 
     @Override

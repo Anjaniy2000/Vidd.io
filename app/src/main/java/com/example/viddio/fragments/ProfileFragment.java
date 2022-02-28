@@ -1,5 +1,6 @@
 package com.example.viddio.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -40,6 +41,7 @@ public class ProfileFragment extends Fragment {
     private String getName;
     private TextView name;
     private TextView email;
+    private ProgressDialog dialog;
 
     @Nullable
     @Override
@@ -208,13 +210,27 @@ public class ProfileFragment extends Fragment {
     }
 
     private void initialTask() {
+        showProgressDialog();
         email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
         DocumentReference reference2 = FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
         reference2.get().addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 DocumentSnapshot snapshot = task.getResult();
                 name.setText(snapshot.getString("fullName"));
+                dismissDialog();
             }
         });
+    }
+
+    private void showProgressDialog() {
+        dialog = new ProgressDialog(getActivity());
+        dialog.show();
+        dialog.setContentView(R.layout.progress_dialog);
+        dialog.setCanceledOnTouchOutside(false);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+    }
+
+    public void dismissDialog() {
+        dialog.dismiss();
     }
 }
