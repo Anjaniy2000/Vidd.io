@@ -19,7 +19,7 @@
     <string name="signout_description">This will allow users who wants to sign out from this application.</string>
     <string name="forgot_password">Forgot / Reset Password</string>
     <string name="forgot_password_description">This will allow users who have forgotten their password to unlock, retrieve, or reset it.</string>
-    <string name="delete_account_description">This will removes your account from the database entirely.</string>
+    <string name="delete_account_description">This will removes your account details from the database entirely.</string>
     <string name="delete_account">Delete Account</string>
     <string name="update_account">Update Username</string>
     <string name="update_account_description">This will allow users who wants to update their username or full name.</string>

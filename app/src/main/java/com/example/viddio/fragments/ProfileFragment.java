@@ -59,6 +59,9 @@ public class ProfileFragment extends Fragment {
         view = inflater.inflate(R.layout.profile_fragment, container, false);
         widgetSetup();
 
+        //Displaying Name & Email:
+        email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
+
         //Update Username:
         updateUsername.setOnClickListener(v -> {
             final EditText newUsername = new EditText(getActivity());
