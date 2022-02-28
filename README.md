@@ -17,4 +17,5 @@
 
 <h3>Main Activity: </h3>
 ![Screenshot](/screenshots/6.png)
+![Screenshot](/screenshots/7.png)
 
