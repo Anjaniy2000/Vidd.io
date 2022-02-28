@@ -4,3 +4,9 @@
 <h3>SplashScreen: </h3>
 
 ![Screenshot](/screenshots/1.png)
+
+<h3>Create New Account: </h3>
+
+![Screenshot](/screenshots/3.png)
+![Screenshot](/screenshots/4.png)
+
