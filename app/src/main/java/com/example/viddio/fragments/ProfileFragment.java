@@ -101,8 +101,15 @@ public class ProfileFragment extends Fragment {
 
                     //CODE FOR POSITIVE(YES) BUTTON: -
                     .setPositiveButton("Yes", (dialog, which) -> {
+                        showProgressDialog();
                         //ACTION FOR "YES" BUTTON: -
-                        FirebaseAuth.getInstance().sendPasswordResetEmail(Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail())).addOnSuccessListener(unused -> Toast.makeText(getActivity(), "Password reset link has been sent to your Email.", Toast.LENGTH_LONG).show()).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
+                        FirebaseAuth.getInstance().sendPasswordResetEmail(Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail())).addOnSuccessListener(unused -> {
+                            dismissDialog();
+                            Toast.makeText(getActivity(), "Password reset link has been sent to your Email.", Toast.LENGTH_LONG).show();
+                        }).addOnFailureListener(e -> {
+                            dismissDialog();
+                            Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                        });
                     })
 
                     //CODE FOR NEGATIVE(NO) BUTTON: -
@@ -182,10 +189,13 @@ public class ProfileFragment extends Fragment {
                                             dismissDialog();
                                         }
                                         else{
-                                            Toast.makeText(getActivity(), Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
                                             dismissDialog();
+                                            Toast.makeText(getActivity(), Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
                                         }
-                                    })).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show());
+                                    })).addOnFailureListener(e -> {
+                                        dismissDialog();
+                                        Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                                    });
                                 });
                     })
 
