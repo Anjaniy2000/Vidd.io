@@ -25,4 +25,5 @@
     <string name="update_account_description">This will allow users who wants to update their username or full name.</string>
     <string name="temp_name">Anjaniy Salekar</string>
     <string name="temp_email">anjaniy01salekar@gmail.com</string>
+    <string name="loading_dialog">Loading...</string>
 </resources>

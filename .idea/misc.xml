@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/drawable/background_gradient.xml" value="0.24814814814814815" />
+        <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/drawable/bg_loading.xml" value="0.2518518518518518" />
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/drawable/button_style.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/drawable/button_style_2.xml" value="0.24814814814814815" />
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.25" />
@@ -15,6 +16,7 @@
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/layout/activity_splash_screen.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/layout/home_fragment.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/layout/profile_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/layout/progress_dialog.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Anjaniy/AndroidStudioProjects/Viddio/app/src/main/res/menu/main_menu.xml" value="0.3333333333333333" />
       </map>
     </option>
