@@ -3,27 +3,18 @@ package com.example.viddio;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.viddio.databinding.ActivityMainBinding;
 import com.example.viddio.fragments.AboutFragment;
 import com.example.viddio.fragments.HomeFragment;
 import com.example.viddio.fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import org.jitsi.meet.sdk.JitsiMeet;
-import org.jitsi.meet.sdk.JitsiMeetActivity;
-import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -79,22 +70,15 @@ public class MainActivity extends AppCompatActivity {
                 .setCancelable(false)
 
                 //CODE FOR POSITIVE(YES) BUTTON: -
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //ACTION FOR "YES" BUTTON: -
-                        finish();
-                    }
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    //ACTION FOR "YES" BUTTON: -
+                    finish();
                 })
 
                 //CODE FOR NEGATIVE(NO) BUTTON: -
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        //ACTION FOR "NO" BUTTON: -
-                        dialog.cancel();
-                    }
+                .setNegativeButton("No", (dialog, which) -> {
+                    //ACTION FOR "NO" BUTTON: -
+                    dialog.cancel();
                 });
 
         //CREATING A DIALOG-BOX: -
