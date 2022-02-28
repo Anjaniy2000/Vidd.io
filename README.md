@@ -23,6 +23,6 @@
 <h4>Profile Fragment: </h4>
 ![Screenshot](/screenshots/7.png)
 
-<h4About App Fragment: </h4
+<h4>About App Fragment: </h4
 ![Screenshot](/screenshots/8.png)
 
