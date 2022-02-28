@@ -38,7 +38,6 @@ public class ProfileFragment extends Fragment {
     private CardView deleteCard;
     private CardView forgotPasswordCard;
     private CardView updateUsername;
-    private String getName;
     private TextView name;
     private TextView email;
     private ProgressDialog dialog;
@@ -215,6 +214,7 @@ public class ProfileFragment extends Fragment {
         return view;
     }
 
+    //Setting up Widgets:
     private void widgetSetup() {
         name = view.findViewById(R.id.name);
         email = view.findViewById(R.id.email);
@@ -224,6 +224,7 @@ public class ProfileFragment extends Fragment {
         deleteCard = view.findViewById(R.id.delete_account_card);
     }
 
+    //Initial Task:
     private void initialTask() {
         showProgressDialog();
         email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());

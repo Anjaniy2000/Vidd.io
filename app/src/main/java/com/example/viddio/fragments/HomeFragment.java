@@ -41,6 +41,7 @@ public class HomeFragment extends Fragment {
         }
         widgetSetup();
 
+        //Join:
         join.setOnClickListener(v -> {
 
             if(meetingCode.getText().toString().isEmpty()){
@@ -57,6 +58,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        //Share:
         share.setOnClickListener(v -> {
 
             if(meetingCode.getText().toString().isEmpty()){
@@ -77,6 +79,7 @@ public class HomeFragment extends Fragment {
         return view;
     }
 
+    //Setting up Widgets:
     private void widgetSetup() {
         join = view.findViewById(R.id.joinButton);
         share = view.findViewById(R.id.shareButton);

@@ -27,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        //Login:
         binding.loginButton.setOnClickListener(v -> {
 
             showProgressDialog();
@@ -58,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             });
         });
 
+        //Create Account:
         binding.createAccountButton.setOnClickListener(v -> startActivity(new Intent(LoginActivity.this, SignupActivity.class)));
     }
 

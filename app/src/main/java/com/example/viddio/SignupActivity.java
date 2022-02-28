@@ -31,6 +31,7 @@ public class SignupActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         database = FirebaseFirestore.getInstance();
 
+        //Sign Up:
         binding.signupButton.setOnClickListener(v -> {
 
             showProgressDialog();
@@ -74,6 +75,7 @@ public class SignupActivity extends AppCompatActivity {
             });
         });
 
+        //Back To Login:
         binding.backToLoginButton.setOnClickListener(v -> startActivity(new Intent(SignupActivity.this, LoginActivity.class)));
 
     }
