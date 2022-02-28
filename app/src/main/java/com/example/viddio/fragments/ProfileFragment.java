@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import com.example.viddio.LoginActivity;
 import com.example.viddio.R;
 import com.example.viddio.SplashScreen;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -46,14 +48,7 @@ public class ProfileFragment extends Fragment {
         widgetSetup();
 
         //Displaying Name & Email:
-        email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
-        DocumentReference reference2 = FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        reference2.get().addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
-                DocumentSnapshot snapshot = task.getResult();
-                name.setText(snapshot.getString("fullName"));
-            }
-        });
+        initialTask();
 
         //Update Username:
         updateUsername.setOnClickListener(v -> {
@@ -72,7 +67,10 @@ public class ProfileFragment extends Fragment {
                         Map<String, Object> map = new HashMap<>();
                         map.put("fullName",newUsername.getText().toString());
 
-                        reference.update(map).addOnSuccessListener(unused -> Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show()).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
+                        reference.update(map).addOnSuccessListener(unused -> {
+                            initialTask();
+                            Toast.makeText(getActivity(), "Username updated!", Toast.LENGTH_LONG).show();
+                        }).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
                     })
 
                     //CODE FOR NEGATIVE(NO) BUTTON: -
@@ -207,5 +205,16 @@ public class ProfileFragment extends Fragment {
         forgotPasswordCard = view.findViewById(R.id.forgot_password_card);
         signoutCard = view.findViewById(R.id.sign_out_card);
         deleteCard = view.findViewById(R.id.delete_account_card);
+    }
+
+    private void initialTask() {
+        email.setText(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail());
+        DocumentReference reference2 = FirebaseFirestore.getInstance().collection("Users").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        reference2.get().addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                DocumentSnapshot snapshot = task.getResult();
+                name.setText(snapshot.getString("fullName"));
+            }
+        });
     }
 }
