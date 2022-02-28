@@ -3,9 +3,11 @@ package com.example.viddio.fragments;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -32,8 +35,12 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.WriteBatch;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+
+import timber.log.Timber;
 
 public class ProfileFragment extends Fragment {
 
@@ -41,6 +48,7 @@ public class ProfileFragment extends Fragment {
     private CardView signoutCard;
     private CardView deleteCard;
     private CardView forgotPasswordCard;
+    private CardView updateUsername;
     private String getName;
     private TextView name;
     private TextView email;
@@ -51,6 +59,41 @@ public class ProfileFragment extends Fragment {
         view = inflater.inflate(R.layout.profile_fragment, container, false);
         widgetSetup();
 
+        //Update Username:
+        updateUsername.setOnClickListener(v -> {
+            final EditText newUsername = new EditText(getActivity());
+            AlertDialog.Builder builder;
+            builder = new AlertDialog.Builder(requireActivity(),R.style.AlertDialogStyle);
+
+            builder.setMessage("Enter your new username")
+
+                    .setCancelable(false)
+
+                    //CODE FOR POSITIVE(YES) BUTTON: -
+                    .setPositiveButton("Save", (dialog, which) -> {
+                        //ACTION FOR "YES" BUTTON: -
+                        DocumentReference reference = FirebaseFirestore.getInstance().collection("Users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("fullName",newUsername.getText().toString());
+
+                        reference.update(map).addOnSuccessListener(unused -> Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show()).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
+                    })
+
+                    //CODE FOR NEGATIVE(NO) BUTTON: -
+                    .setNegativeButton("Back", (dialog, which) -> {
+                        //ACTION FOR "NO" BUTTON: -
+                        dialog.cancel();
+                    });
+
+            //CREATING A DIALOG-BOX: -
+            AlertDialog alertDialog = builder.create();
+            //SET TITLE MAUALLY: -
+            alertDialog.setView(newUsername);
+            alertDialog.setTitle("Update username");
+            alertDialog.show();
+        });
+
+        //Forgot / Reset Password:
         forgotPasswordCard.setOnClickListener(v -> {
 
             AlertDialog.Builder builder;
@@ -79,6 +122,7 @@ public class ProfileFragment extends Fragment {
             alertDialog.show();
         });
 
+        //Sign Out:
         signoutCard.setOnClickListener(v -> {
 
             AlertDialog.Builder builder;
@@ -110,6 +154,7 @@ public class ProfileFragment extends Fragment {
 
         });
 
+        //Delete Account:
         deleteCard.setOnClickListener(v -> {
 
             AlertDialog.Builder builder;
@@ -162,6 +207,7 @@ public class ProfileFragment extends Fragment {
     private void widgetSetup() {
         name = view.findViewById(R.id.name);
         email = view.findViewById(R.id.email);
+        updateUsername = view.findViewById(R.id.updateUsername);
         forgotPasswordCard = view.findViewById(R.id.forgot_password_card);
         signoutCard = view.findViewById(R.id.sign_out_card);
         deleteCard = view.findViewById(R.id.delete_account_card);
