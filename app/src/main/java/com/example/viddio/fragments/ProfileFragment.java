@@ -70,8 +70,8 @@ public class ProfileFragment extends Fragment {
                         map.put("fullName",newUsername.getText().toString());
 
                         reference.update(map).addOnSuccessListener(unused -> {
+                            Toast.makeText(getActivity(), "Username has been updated!", Toast.LENGTH_LONG).show();
                             initialTask();
-                            Toast.makeText(getActivity(), "Username updated!", Toast.LENGTH_LONG).show();
                         }).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
                     })
 
@@ -140,7 +140,7 @@ public class ProfileFragment extends Fragment {
                         showProgressDialog();
                         //ACTION FOR "YES" BUTTON: -
                         FirebaseAuth.getInstance().signOut();
-                        Toast.makeText(getActivity(), "Sign out successfully", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Sign out has been successfully", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(getActivity(), LoginActivity.class));
                         dismissDialog();
                     })
@@ -184,7 +184,7 @@ public class ProfileFragment extends Fragment {
 
                                     writeBatch.commit().addOnSuccessListener(unused -> Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).delete().addOnCompleteListener(task -> {
                                         if(task.isSuccessful()){
-                                            Toast.makeText(getActivity(), "Account deleted successfully", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getActivity(), "Account has been deleted successfully", Toast.LENGTH_LONG).show();
                                             startActivity(new Intent(getActivity(), SplashScreen.class));
                                             dismissDialog();
                                         }
