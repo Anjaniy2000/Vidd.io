@@ -16,13 +16,7 @@
 ![Screenshot](/screenshots/5.png)
 
 <h3>Main Activity: </h3>
-
-<h4>Home Fragment: </h4>
 ![Screenshot](/screenshots/6.png)
-
-<h4>Profile Fragment: </h4>
 ![Screenshot](/screenshots/7.png)
-
-<h4>About App Fragment: </h4>
 ![Screenshot](/screenshots/8.png)
 
