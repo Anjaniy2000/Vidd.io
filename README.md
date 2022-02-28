@@ -15,8 +15,7 @@
 ![Screenshot](/screenshots/2.png)
 ![Screenshot](/screenshots/5.png)
 
-<h3>Main Activity: </h3>
-![Screenshot](/screenshots/6.png)
-![Screenshot](/screenshots/7.png)
-![Screenshot](/screenshots/8.png)
+<h3>SplashScreen: </h3>
+
+![Screenshot](/screenshots/1.png)
 
