@@ -5,8 +5,8 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
         android:background="@drawable/bg_loading"
         android:gravity="center"
         android:orientation="vertical"
