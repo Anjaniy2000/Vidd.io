@@ -71,6 +71,7 @@ public class SignupActivity extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(SignupActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    dismissDialog();
                 }
             });
         });
