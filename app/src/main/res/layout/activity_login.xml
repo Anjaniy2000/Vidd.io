@@ -7,13 +7,10 @@
     android:background="@color/primary_forth"
     tools:context=".LoginActivity">
 
-    <androidx.cardview.widget.CardView
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="36dp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,69 +18,85 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView3"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                app:srcCompat="@drawable/logo" />
-
-            <EditText
-                android:id="@+id/emailForLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@drawable/textbox"
-                android:drawableStart="@drawable/email_drawable"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:hint="@string/emailHint"
-                android:inputType="textEmailAddress"
-                android:minHeight="48dp"
-                android:padding="8dp" />
-
-            <EditText
-                android:id="@+id/passwordForLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:background="@drawable/textbox"
-                android:drawableStart="@drawable/password_drawable"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:hint="@string/passwordHint"
-                android:inputType="textPassword"
-                android:minHeight="48dp"
-                android:padding="8dp" />
-
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:background="@drawable/button_style"
-                android:text="@string/loginButton"
-                android:textColor="@color/white">
-            </Button>
+                app:cardElevation="4dp"
+                app:cardCornerRadius="36dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="64dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
 
-            <Button
-                android:id="@+id/createAccountButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/button_style_2"
-                android:text="@string/createAccountButton"
-                android:textColor="@color/white" />
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        app:srcCompat="@drawable/logo" />
+
+                    <EditText
+                        android:id="@+id/emailForLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/textbox"
+                        android:drawableStart="@drawable/email_drawable"
+                        android:drawablePadding="16dp"
+                        android:ems="10"
+                        android:hint="@string/emailHint"
+                        android:inputType="textEmailAddress"
+                        android:minHeight="48dp"
+                        android:padding="8dp" />
+
+                    <EditText
+                        android:id="@+id/passwordForLogin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/textbox"
+                        android:drawableStart="@drawable/password_drawable"
+                        android:drawablePadding="16dp"
+                        android:ems="10"
+                        android:hint="@string/passwordHint"
+                        android:inputType="textPassword"
+                        android:minHeight="48dp"
+                        android:padding="8dp" />
+
+                    <Button
+                        android:id="@+id/loginButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/button_style"
+                        android:text="@string/loginButton"
+                        android:textColor="@color/white">
+                    </Button>
+
+                    <Button
+                        android:id="@+id/createAccountButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/button_style_2"
+                        android:text="@string/createAccountButton"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
