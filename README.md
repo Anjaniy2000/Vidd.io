@@ -38,7 +38,8 @@
 ![Screenshot](/screenshots/13.png)
 ![Screenshot](/screenshots/14.png)
 ![Screenshot](/screenshots/15.png)
-
+![Screenshot](/screenshots/16.png)
+![Screenshot](/screenshots/17.png)
 <h3>About App: </h3>
 
-![Screenshot](/screenshots/16.png)
+![Screenshot](/screenshots/18.png)
