@@ -69,8 +69,8 @@ public class ProfileFragment extends Fragment {
                         map.put("fullName",newUsername.getText().toString());
 
                         reference.update(map).addOnSuccessListener(unused -> {
-                            Toast.makeText(getActivity(), "Username has been updated!", Toast.LENGTH_LONG).show();
                             initialTask();
+                            Toast.makeText(getActivity(), "Username has been updated!", Toast.LENGTH_LONG).show();
                         }).addOnFailureListener(e -> Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show());
                     })
 
@@ -104,7 +104,7 @@ public class ProfileFragment extends Fragment {
                         //ACTION FOR "YES" BUTTON: -
                         FirebaseAuth.getInstance().sendPasswordResetEmail(Objects.requireNonNull(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getEmail())).addOnSuccessListener(unused -> {
                             dismissDialog();
-                            Toast.makeText(getActivity(), "Password reset link has been sent to your Email.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "Password reset link has been sent to your email.", Toast.LENGTH_LONG).show();
                         }).addOnFailureListener(e -> {
                             dismissDialog();
                             Toast.makeText(getActivity(), e.getLocalizedMessage(), Toast.LENGTH_LONG).show();
@@ -234,6 +234,10 @@ public class ProfileFragment extends Fragment {
                 DocumentSnapshot snapshot = task.getResult();
                 name.setText(snapshot.getString("fullName"));
                 dismissDialog();
+            }
+            else{
+                dismissDialog();
+                Toast.makeText(getActivity(), Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
