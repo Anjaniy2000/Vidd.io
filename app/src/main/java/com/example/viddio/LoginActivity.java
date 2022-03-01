@@ -30,8 +30,6 @@ public class LoginActivity extends AppCompatActivity {
         //Login:
         binding.loginButton.setOnClickListener(v -> {
 
-            showProgressDialog();
-
             //Validations:
             if(binding.emailForLogin.getText().toString().isEmpty()){
                 binding.emailForLogin.setError("Enter your email address");
@@ -45,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-
+            showProgressDialog();
             auth.signInWithEmailAndPassword(binding.emailForLogin.getText().toString(), binding.passwordForLogin.getText().toString()).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Login successfully!", Toast.LENGTH_SHORT).show();
@@ -55,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else{
                     Toast.makeText(LoginActivity.this, Objects.requireNonNull(task.getException()).getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                    dismissDialog();
                 }
             });
         });

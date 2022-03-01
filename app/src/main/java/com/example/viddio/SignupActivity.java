@@ -34,11 +34,15 @@ public class SignupActivity extends AppCompatActivity {
         //Sign Up:
         binding.signupButton.setOnClickListener(v -> {
 
-            showProgressDialog();
-
             //Validations:
             if(binding.fullName.getText().toString().isEmpty()){
                 binding.fullName.setError("Enter your full name");
+                binding.fullName.requestFocus();
+                return;
+            }
+
+            if(binding.fullName.getText().toString().length() <= 6){
+                binding.fullName.setError("Please enter your full name");
                 binding.fullName.requestFocus();
                 return;
             }
@@ -60,6 +64,7 @@ public class SignupActivity extends AppCompatActivity {
             user.setEmailAddress(binding.emailForSignup.getText().toString());
             user.setPassword(binding.passwordForSignup.getText().toString());
 
+            showProgressDialog();
             auth.createUserWithEmailAndPassword(binding.emailForSignup.getText().toString(), binding.passwordForSignup.getText().toString()).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
                     database.collection("Users").document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid()).set(user).addOnSuccessListener(unused -> {
