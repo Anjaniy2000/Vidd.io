@@ -35,17 +35,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="@string/temp_name"
             android:textColor="@color/black"
             android:textSize="24sp"
-            android:text="@string/temp_name" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/profile" />
 
         <TextView
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:text="@string/temp_email"
             android:textSize="20sp"
-            android:text="@string/temp_email" />
+            app:drawableStartCompat="@drawable/ic_baseline_email_24" />
     </LinearLayout>
 
     <LinearLayout
