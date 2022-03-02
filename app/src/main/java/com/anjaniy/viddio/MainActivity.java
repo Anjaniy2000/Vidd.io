@@ -1,19 +1,19 @@
-package com.example.viddio;
+package com.anjaniy.viddio;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.annotation.SuppressLint;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.example.viddio.databinding.ActivityMainBinding;
-import com.example.viddio.fragments.AboutFragment;
-import com.example.viddio.fragments.HomeFragment;
-import com.example.viddio.fragments.ProfileFragment;
+import com.anjaniy.viddio.fragments.AboutFragment;
+import com.anjaniy.viddio.fragments.HomeFragment;
+import com.anjaniy.viddio.fragments.ProfileFragment;
+import com.anjaniy.viddio.R;
+import com.anjaniy.viddio.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {

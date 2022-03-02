@@ -1,4 +1,4 @@
-package com.example.viddio.models;
+package com.anjaniy.viddio.models;
 
 public class User {
     private String fullName;

@@ -1,4 +1,4 @@
-package com.example.viddio.fragments;
+package com.anjaniy.viddio.fragments;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -9,27 +9,26 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import com.example.viddio.LoginActivity;
-import com.example.viddio.R;
-import com.example.viddio.SplashScreen;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+
+import com.anjaniy.viddio.LoginActivity;
+import com.anjaniy.viddio.SplashScreen;
+import com.anjaniy.viddio.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.WriteBatch;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-
-import timber.log.Timber;
 
 public class ProfileFragment extends Fragment {
 

@@ -1,4 +1,4 @@
-package com.example.viddio.fragments;
+package com.anjaniy.viddio.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import com.example.viddio.R;
+
+import com.anjaniy.viddio.R;
+
 import org.jitsi.meet.sdk.JitsiMeet;
 import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 

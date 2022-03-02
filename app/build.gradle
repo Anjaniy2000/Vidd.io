@@ -13,7 +13,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.viddio"
+        applicationId "com.anjaniy.viddio"
         minSdk 24
         targetSdk 31
         versionCode 1

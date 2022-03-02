@@ -1,14 +1,15 @@
-package com.example.viddio;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.anjaniy.viddio;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.example.viddio.databinding.ActivitySignupBinding;
-import com.example.viddio.models.User;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.anjaniy.viddio.models.User;
+import com.anjaniy.viddio.R;
+import com.anjaniy.viddio.databinding.ActivitySignupBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
